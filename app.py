@@ -15,6 +15,16 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 import datetime
 import tempfile
+import os
+
+
+current_dir = os.path.dirname(__file__)
+logo_path = os.path.join(current_dir, "Agriculture.jpeg")
+try:
+    st.sidebar.image(logo_path, width=400)
+    
+except Exception as e:
+    print(f"Logo file exists: {os.path.exists(logo_path)}")
 
 # Set Streamlit app title and description
 st.title("🌾 Agriculture Commodity Price Predictor App:")
@@ -33,7 +43,7 @@ st.sidebar.markdown("""
 2. Choose a **Date** for prediction.
 3. Click **Predict Price** for results.
 4. Use tools like **Price Trend**, **Correlation Heatmap**, and **Volatility Analysis**.
-5. Export data to **CSV** or generate a **PDF Report**.
+5. Export data to **CSV** .
 """)
 
 # Load the CSV file
