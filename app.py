@@ -14,6 +14,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 import datetime
+import tempfile
 
 # Set Streamlit app title and description
 st.title("🌾 Agriculture Commodity Price Predictor App:")
@@ -314,14 +315,6 @@ if st.button("Export Data to CSV"):
         mime='text/csv'
     )
 
-from fpdf import FPDF
-from io import BytesIO
-import base64
-import matplotlib.pyplot as plt
-import seaborn as sns
-import streamlit as st
-import numpy as np
-
 # Function to plot price volatility
 def plot_price_volatility():
     df = filtered_data[['Arrival_Date', 'Modal Price']].dropna()
@@ -341,26 +334,24 @@ def plot_price_volatility():
     img.seek(0)
     return img
 
-from fpdf import FPDF
-from io import BytesIO
-import base64
-import streamlit as st
-
 # Function to generate and download the report
 def download_report(state, district, market, commodity, predicted_price, selected_date):
     pdf = FPDF()
 
     def add_image_to_pdf(image_data, title):
         if image_data:
-            pdf.add_page()  # Add a new page for each image
-            pdf.set_font("Arial", 'B', 14)
-            pdf.cell(200, 10, txt=title, ln=True)
-            pdf.ln(5)
-            pdf.set_font("Arial", size=12)
-            # Reset BytesIO object position to the start
-            image_data.seek(0)
-            pdf.image(image_data, x=10, y=pdf.get_y() + 10, w=190)
-            pdf.ln(10)
+            # Save the BytesIO image data to a temporary file
+            with tempfile.NamedTemporaryFile(delete=False, suffix='.png') as temp_file:
+                temp_file.write(image_data.getvalue())
+                temp_file.seek(0)
+                
+                pdf.add_page()  # Add a new page for each image
+                pdf.set_font("Arial", 'B', 14)
+                pdf.cell(200, 10, txt=title, ln=True)
+                pdf.ln(5)
+                pdf.set_font("Arial", size=12)
+                pdf.image(temp_file.name, x=10, y=pdf.get_y() + 10, w=190)
+                pdf.ln(10)
         else:
             pdf.add_page()  # Ensure each image has its own page even if it's not available
             pdf.set_font("Arial", size=12)
