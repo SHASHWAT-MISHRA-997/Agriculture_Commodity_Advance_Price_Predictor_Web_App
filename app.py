@@ -34,17 +34,17 @@ st.subheader("""
 **Developer** : Shashwat Mishra
             LinkedIn = https://www.linkedin.com/in/sm980
 
-This app provides intelligent predictions and insights into agricultural commodity prices, designed for businesses and government bodies.
-Use this tool to analyze historical trends, predict prices, and generate comprehensive reports.
+This app provides intelligent predictions and insights into agricultural commodity prices  designed for businesses and government bodies.
+Use this tool to analyze historical trends, predict prices and generate comprehensive reports.
 """)
 
 # Sidebar Instructions
 st.sidebar.header("📋 Instructions")
 st.sidebar.markdown("""
-1. Select a **State, District, Market,** and **Commodity**.
+1. Select a **State, District, Market ** and **Commodity**.
 2. Choose a **Date** for prediction.
 3. Click **Predict Price** for results.
-4. Use tools like **Price Trend**, **Correlation Heatmap**, and **Volatility Analysis**.
+4. Use tools like **Price Trend**, **Correlation Heatmap** and **Volatility Analysis**.
 5. Export data to **CSV** .
 """)
 
