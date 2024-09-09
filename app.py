@@ -33,8 +33,8 @@ st.title("🌾 AI-ML Based Commodity Price Prediction System for Agri-Horticultu
 st.subheader("""
 **Developer** : Shashwat Mishra""")
 linkedin_url = "https://www.linkedin.com/in/sm980"  
-    st.markdown(f"[LinkedIn Profile]({linkedin_url})", unsafe_allow_html=True)
-    st.write("You can find me on LinkedIn by clicking the link above.")
+st.markdown(f"[LinkedIn Profile]({linkedin_url})", unsafe_allow_html=True)
+st.write("You can find me on LinkedIn by clicking the link above.")
      
 
 st.markdown("""This app provides intelligent predictions and insights into agricultural commodity prices  designed for businesses and government bodies.
