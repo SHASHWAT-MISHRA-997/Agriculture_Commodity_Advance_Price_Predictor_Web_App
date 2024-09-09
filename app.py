@@ -10,7 +10,7 @@ from fpdf import FPDF
 import streamlit as st
 import logging
 import math
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, KFold
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 import datetime
@@ -110,16 +110,24 @@ def train_model():
     df = filtered_data[['Arrival_Date', 'Modal Price']].dropna()
     df['Arrival_Date'] = df['Arrival_Date'].map(pd.Timestamp.toordinal)
 
+    if len(df) < 2:
+        logging.error("Insufficient data for model training.")
+        st.error("Insufficient data for model training. Please provide more data.")
+        return None, None, None
+    
     # Split data into features and target
     X = df[['Arrival_Date']]
     y = df['Modal Price']
 
-    # Split into training and test sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-    # Train the model (using linear regression for simplicity)
+    # Use K-Fold cross-validation for small datasets
+    kf = KFold(n_splits=min(5, len(df)), shuffle=True, random_state=42)
     model = LinearRegression()
-    model.fit(X_train, y_train)
+
+    for train_index, test_index in kf.split(X):
+        X_train, X_test = X.iloc[train_index], X.iloc[test_index]
+        y_train, y_test = y.iloc[train_index], y.iloc[test_index]
+        model.fit(X_train, y_train)
+
     return model, X_test, y_test
 
 model, X_test, y_test = train_model()
@@ -212,7 +220,6 @@ else:
                 st.error("No predictions available for the selected date range.")
         except Exception as e:
             st.error(f"Error predicting prices: {e}")
-
 # Visualizations and trend analysis
 st.subheader("📈 Price Trend and Analysis")
 st.write("Visualize price trends, correlations, and volatility for better decision-making.")
