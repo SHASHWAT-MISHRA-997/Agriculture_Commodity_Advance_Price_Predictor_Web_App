@@ -39,12 +39,12 @@ Use this tool to analyze historical trends, predict prices and generate comprehe
 """)
 
 # Sidebar Instructions
-st.sidebar.header("📋 Instructions")
+st.sidebar.header("📋 Instructions : ")
 st.sidebar.markdown("""
 1. Select a **State, District, Market ** and **Commodity**.
 2. Choose a **Date** for prediction.
 3. Click **Predict Price** for results.
-4. Use tools like **Price Trend**, **Correlation Heatmap** and **Volatility Analysis**.
+4. Use tools like **Price Trend**, **Correlation Heatmap** ** Price Comparison** and **Volatility Analysis**.
 5. Export data to **CSV** .
 """)
 
@@ -71,7 +71,7 @@ else:
 states = commodity_data['State'].unique()
 
 # Streamlit user selections
-st.subheader("🔍 Predict Commodity Price")
+st.subheader("🔍 Predict Commodity Price : ")
 st.write("Select the commodity details to get actual or predicted prices.")
 
 selected_state = st.selectbox("Select a State", states)
@@ -178,7 +178,7 @@ if st.button("Predict Price"):
         st.error(f"Error: {e}")
 
 # Add Date Range Selection
-st.subheader("📅 Predict Prices for Date Range")
+st.subheader("📅 Predict Prices for Date Range : ")
 start_date = st.date_input("Select Start Date", value=datetime.date.today())
 end_date = st.date_input("Select End Date", value=datetime.date.today() + datetime.timedelta(days=30))
 
@@ -221,8 +221,8 @@ else:
         except Exception as e:
             st.error(f"Error predicting prices: {e}")
 # Visualizations and trend analysis
-st.subheader("📈 Price Trend and Analysis")
-st.write("Visualize Price Trends, Correlations Heatmap, Price Comparison and Volatility for better decision-making.")
+st.subheader("📈 Price Trend and Analysis : ")
+st.write("Visualize Price Trends, Correlation Heatmap, Price Comparison and Volatility for better decision-making.")
 
 def plot_prices():
     df = filtered_data[['Arrival_Date', 'Modal Price']].dropna()
@@ -295,20 +295,20 @@ def price_comparison():
     img.seek(0)
     return img
 
-st.subheader("📉 Price Trend")
+st.subheader("📉 Price Trend : ")
 if st.button("Show Price Trend"):
     st.image(plot_prices(), caption="Price Trend")
 
-st.subheader("🔍 Correlation Heatmap")
+st.subheader("🔍 Correlation Heatmap : ")
 if st.button("Show Correlation Heatmap"):
     st.image(show_correlation_heatmap(), caption="Correlation Heatmap")
 
-st.subheader("📊 Price Comparison")
+st.subheader("📊 Price Comparison : ")
 if st.button("Show Price Comparison"):
     st.image(price_comparison(), caption="Price Comparison")
 
 # Volatility Analysis
-st.subheader("📊 Volatility Analysis")
+st.subheader("📊 Volatility Analysis : ")
 st.write("Analyze the price volatility of the selected commodity.")
 
 def calculate_volatility():
@@ -323,7 +323,7 @@ if st.button("Calculate Volatility"):
     st.write(f"Price Volatility: {volatility:.2f}")
 
 # Generate CSV Report
-st.subheader("📄 Export Data")
+st.subheader("📄 Export Data : ")
 if st.button("Export Data to CSV"):
     df = filtered_data[['Arrival_Date', 'Modal Price']]
     csv = df.to_csv(index=False)
