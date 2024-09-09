@@ -44,7 +44,7 @@ st.sidebar.markdown("""
 1. Select a **State, District, Market ** and **Commodity**.
 2. Choose a **Date** for prediction.
 3. Click **Predict Price** for results.
-4. Use tools like **Price Trend**, **Correlation Heatmap** ** Price Comparison** and **Volatility Analysis**.
+4. Use tools like **Price Trend**, **Correlation Heatmap** , **Price Comparison** and **Volatility Analysis**.
 5. Export data to **CSV** .
 """)
 
