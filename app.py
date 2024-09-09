@@ -29,7 +29,7 @@ except Exception as e:
     print(f"Logo file exists: {os.path.exists(logo_path)}")
 
 # Set Streamlit app title and description
-st.title("🌾 Agriculture Commodity Price Predictor App:")
+st.title("🌾 AI-ML Based Commodity Price Prediction System for Agri-Horticultural Markets:")
 st.subheader("""
 **Developer** : Shashwat Mishra
             LinkedIn = https://www.linkedin.com/in/sm980
