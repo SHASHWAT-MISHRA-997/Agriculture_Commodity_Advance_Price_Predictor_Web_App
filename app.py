@@ -222,7 +222,7 @@ else:
             st.error(f"Error predicting prices: {e}")
 # Visualizations and trend analysis
 st.subheader("📈 Price Trend and Analysis")
-st.write("Visualize price trends, correlations, and volatility for better decision-making.")
+st.write("Visualize Price Trends, Correlations Heatmap, Price Comparison and Volatility for better decision-making.")
 
 def plot_prices():
     df = filtered_data[['Arrival_Date', 'Modal Price']].dropna()
