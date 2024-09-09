@@ -45,7 +45,7 @@ st.sidebar.markdown("""
 2. Choose a **Date** for prediction.
 3. Click **Predict Price** for results.
 4. Use tools like **Price Trend**, **Correlation Heatmap**, and **Volatility Analysis**.
-5. Export data to **CSV** or generate a **PDF Report**.
+5. Export data to **CSV** .
 """)
 
 # Load the CSV file
