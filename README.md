@@ -1,68 +1,69 @@
-# Commodity Price Predictor:
+# 🌾 AI-ML Based Commodity Price Prediction System for Agri-Horticultural Markets: 
 
-This web application allows users to predict the prices of various commodities based on historical data. The app is designed with a dynamic, visually engaging UI and background animations. offering a professional and interactive experience. The machine learning model predicts commodity prices based on user input and historical trends.
+Welcome to the Agriculture Commodity Price Predictor Web App! This tool provides advanced AI and ML-based predictions to help agricultural stakeholders such as farmers, businesses, and government bodies analyze price trends and forecast future commodity prices in real-time.
 
-## Features:
+# 🚀 Key Features :
 
-- **Price Prediction**: Predict prices for a variety of commodities such as Natural Gas, Gold, WTI Crude, Soybeans and many more.
-- **Dynamic Date Selection**: Users can select any date (past, present, or future) to predict prices.
-- **Animated UI**: The background features moving animations, RGB gradients and hover effects that enhance the visual appeal.
-- **Interactive Buttons**: Hover over buttons to experience lightning effects.
-- **User-Friendly Instructions**: Clear instructions are provided to help users interact with the app.
-- **Developed By SHASHWAT MISHRA**: Footer displaying the developer's credit.
+📊 Price Prediction: Forecast future prices of agricultural commodities based on historical data.
 
-## Commodities Available for Prediction:
+🌍 Multi-Region Support: Select specific States, Districts, Markets, and Commodities to analyze.
 
-- NATURAL GAS
-- GOLD
-- WTI CRUDE
-- BRENT CRUDE
-- SOYBEANS
-- CORN
-- COPPER
-- SILVER
-- LOW SULPHUR GAS OIL
-- LIVE CATTLE
-- SOYBEAN OIL
-- ALUMINIUM
-- SOYBEAN MEAL
-- ZINC
-- ULS DIESEL
-- NICKEL
-- WHEAT
-- SUGAR
-- GASOLINE
-- COFFEE
-- LEAN HOGS
-- HRW WHEAT
-- COTTON
+📅 Date Range Analysis: Predict prices for single or multiple dates, and observe trends over time.
 
-## How to Use:
+🧮 Correlation Heatmap: Visualize the relationship between various commodity prices for comprehensive insights.
 
-1. Select a commodity from the dropdown list.
-2. Choose a date (past, present, or future) to predict the commodity price.
-3. Click the "Predict Price" button to view the price prediction.
-4. If the data for the selected date is not available. the machine learning model will predict based on historical data.
+💹 Volatility Analysis: Track the price volatility to understand market fluctuations.
 
-## Background and Animations:
+📈 Data Export: Export analytical data to CSV for offline use.
 
-- **RGB Gradient and Moving Texture**: The background uses an animated gradient that changes over time to create a dynamic feel.
-- **3D Moving Circles**: Circular animations move across the background, enhancing the interactive experience.
-- **Lightning Button Hover**: Buttons display a glowing lightning effect when hovered over.
+# 🛠️ Instructions :
+Select State, District, Market, and Commodity: Use the dropdown menus on the left sidebar to choose the relevant details.
 
-## Setup Instructions:
+Choose Prediction Date: Input the desired date or date range for price prediction.
 
-### Prerequisites:
+Predict: Click Predict Price to get results instantly.
 
-- Python 3.10 or above
-- Flask
-- Joblib
-- Pandas
-- Scikit-learn
+Advanced Tools: Use options such as Price Trend, Correlation Heatmap, Price Comparison, and Volatility Analysis for deeper insights.
 
-### Installation:
+Export: Click Export Data to download predictions and historical data in CSV format.
 
-1. Clone this repository:
+# 🧑‍💻 Developer:
 
-   ```bash
-   git clone https://github.com/Shashwat876/commodity-price-predictor.git
+Shashwat Mishra
+
+
+# 📋 Technologies Used :
+
+Languages: Python
+
+Libraries: pandas, numpy, matplotlib, seaborn, statsmodels, scikit-learn
+
+Web Framework: Streamlit
+
+Report Generation: FPDF
+
+# 🎯 How It Works :
+Data Loading: The app loads data from historical commodity prices and processes it to allow user filtering by State, District, Market, and Commodity.
+
+Modeling: Trained using Linear Regression and ARIMA, the models predict prices based on past trends.
+
+Visualization: Real-time charts, heatmaps, and trend analysis enhance decision-making by offering clear, actionable insights.
+
+# 🔧 How to Run ;
+
+Clone the repository.
+
+Install dependencies:
+
+bash
+Copy code
+pip install -r requirements.txt
+
+Launch the app:
+
+bash
+Copy code
+streamlit run app.py
+Navigate to the provided local URL to use the app.
+# 📦 Contribute : 
+Feel free to fork the repository and submit pull requests to improve the app.
