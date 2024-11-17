@@ -30,12 +30,54 @@ except Exception as e:
 
 # Set Streamlit app title and description
 st.title("🌾 AI-ML Based Commodity Price Prediction System for Agri-Horticultural Markets:")
-st.subheader("""
-**Developer** : Shashwat Mishra""")
-linkedin_url = "https://www.linkedin.com/in/sm980"  
-st.markdown(f"[LinkedIn Profile]({linkedin_url})", unsafe_allow_html=True)
-st.write("You can find me on LinkedIn by clicking the link above.")
-     
+
+# Custom CSS for background hover effect and button colors
+st.markdown(""" 
+    <style>
+        body {
+            background: linear-gradient(135deg, rgba(255,0,0,0.7), rgba(0,0,255,0.7));
+            transition: background-color 0.5s ease;
+        }
+        .stButton > button:hover {
+            background-color: rgba(255, 165, 0, 0.8);
+            color: white;
+        }
+        .stButton > button {
+            background-color: rgba(0, 255, 0, 0.7);
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .stButton > button:active {
+            transform: scale(0.95);
+        }
+        .creator-link {
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            display: block;  
+            text-align: center;  
+            margin-top: 10px;   
+        }
+        .creator-link:hover {
+            background-color: white;  
+            color: red;              
+            padding: 5px;           
+            border-radius: 5px;     
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Creator link at the top of the sidebar
+st.markdown(
+    '<a href="https://www.linkedin.com/in/sm980/" class="creator-link">Created by SHASHWAT MISHRA</a>',
+    unsafe_allow_html=True
+)
+
 
 st.markdown("""This app provides intelligent predictions and insights into agricultural commodity prices  designed for businesses and government bodies.
 Use this tool to analyze historical trends, predict prices and generate comprehensive reports.
